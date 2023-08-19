@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background: rgb(46, 45, 45); */
+    background: url('images/admin.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+    /* background: purple; */
+    background: transparent;
+    border: 2px solid rgba(255,255,255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0,0,0, .2);;
+    color: #fff;
+    border-radius: 30px;
+    padding: 30px 40px;
+}
+
+.wrapper h1{
+    font-size: 38px;
+    text-align: center;
+}
+
+.wrapper .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    /* background-color: salmon; */
+    margin: 30px 0;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255,255,255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.remember-forget{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+
+.remember-forget label input{
+    accent-color: #fff;
+    margin-right: 3px;
+}
+
+.remember-forget a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forget a:hover{
+    text-decoration: underline;
+}
+
+.wrapper .btn{
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(255,255,255, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.form-section {
+            width: 48%; /* Adjust the width as needed */
+        }
+
+.credit-card-section {
+            width: 48%; /* Adjust the width as needed */
+            /* background-color: rgba(255, 255, 255, 0.1); Optional background color */
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+    </style>
+</head>
+<body>
+     <div class="wrapper">
+        <div class="form-section">
+            <form action="">
+                <h1>BILLING ADDRESS</h1>
+                <div class="input-box">
+                    <input type="text" id="name" maxlength="50" placeholder="Full Name">
+                </div>
+                <div class="input-box">
+                    <input type="text" id="email" placeholder="Email">
+                </div>
+                <div class="input-box">
+                    <input type="text" id="address" placeholder="Address">
+                </div>
+                <div class="input-box">
+                    <input type="text" id="city" placeholder="City">
+                </div>
+                <div class="input-box">
+                    <input type="number" id="zip" placeholder="Zip code">
+                </div>
+            </form>
+        </div>
+
+            <!-- Credit Card Information -->
+            <div class="credit-card-section">
+                <h1>CREDIT CARD INFORMATION</h1>
+                <div class="input-box">
+                    <input type="text" id="creditCardName" maxlength="50" placeholder="Cardholder Name">
+                </div>
+                <div class="input-box">
+                    <input type="text" id="card-num" maxlength="16" placeholder="Card Number">
+                </div>
+                <div class="input-box">
+                    <input type="text" id="expiration" maxlength="5" placeholder="Expiration Date (MM/YY)">
+                </div>
+                <div class="input-box">
+                    <input type="text" id="cvv" maxlength="3" placeholder="CVV">
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </div>
+     </div>
+     <script>
+
+    // Name Validation
+    const nameInput = document.getElementById('name');
+        const creditCardNameInput = document.getElementById('creditCardName');
+
+        nameInput.addEventListener('input', function(event) {
+            const input = event.target.value.replace(/[^a-zA-Z\s\-']/g, ''); // Remove non-letter characters
+            event.target.value = input; // Set the sanitized input value
+        });
+
+        creditCardNameInput.addEventListener('input', function(event) {
+            const input = event.target.value.replace(/[^a-zA-Z\s\-']/g, ''); // Remove non-letter characters
+            event.target.value = input; // Set the sanitized input value
+        });
+
+    // Email Validatin
+    const emailInput = document.getElementById('email');
+        const addressInput = document.getElementById('address');
+        let previousEmail = '';
+
+        emailInput.addEventListener('blur', function(event) {
+            const enteredEmail = event.target.value;
+            if (!isValidEmail(enteredEmail)) {
+                previousEmail = enteredEmail;
+                event.target.value = '';
+            }
+        });
+
+        addressInput.addEventListener('focus', function() {
+            if (!isValidEmail(previousEmail)) {
+                emailInput.value = previousEmail;
+            }
+        });
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+
+    // Card validation
+        const cardInput = document.getElementById('card-num');
+
+        cardInput.addEventListener('input', function(event) {
+            const input = event.target.value;
+            const sanitizedInput = input.replace(/\D/g, ''); // Remove non-digit characters
+
+            if (sanitizedInput.length > 16) {
+                event.target.value = sanitizedInput.slice(0, 16); // Truncate to 3 characters
+            } else {
+                event.target.value = sanitizedInput; // Set the sanitized input value
+            }
+        });
+
+        const expirationInput = document.getElementById('expiration');
+
+        expirationInput.addEventListener('input', function(event) {
+            const input = event.target.value;
+            const sanitizedInput = input.replace(/\D/g, ''); // Remove non-digit characters
+
+            if (sanitizedInput.length > 4) {
+                event.target.value = sanitizedInput.slice(0, 4); // Truncate to 4 characters
+            } else {
+                event.target.value = sanitizedInput; // Set the sanitized input value
+            }
+
+            if (sanitizedInput.length >= 2) {
+                const formattedDate = sanitizedInput.slice(0, 2) + '/' + sanitizedInput.slice(2);
+                event.target.value = formattedDate; // Set the formatted MM/YY value
+            }
+        });
+
+        const cvvInput = document.getElementById('cvv');
+
+        cvvInput.addEventListener('input', function(event) {
+            const input = event.target.value;
+            const sanitizedInput = input.replace(/\D/g, ''); // Remove non-digit characters
+
+            if (sanitizedInput.length > 3) {
+                event.target.value = sanitizedInput.slice(0, 3); // Truncate to 3 characters
+            } else {
+                event.target.value = sanitizedInput; // Set the sanitized input value
+            }
+        });
+
+    </script>
+</body>
+</html>
