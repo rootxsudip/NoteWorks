@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteWorks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            color: #fff;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #ff6600;
+        }
+
+        .auth-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .auth-buttons button {
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            margin-left: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            margin-right: 1000px;
+        }
+
+        nav li {
+            margin-right: 1rem;
+        }
+
+        nav a,#docs a,.blog-post a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover,#docs a:hover,.blog-post a {
+            color: #ff9966;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .section {
+            background-color: #222;
+            border-radius: 5px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transform: translateY(0);
+            opacity: 1;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        }
+
+        .section h2 {
+            margin-top: 0;
+            color: #ff6600;
+        }
+
+        .section p {
+            margin-bottom: 0;
+        }
+
+        .get-started {
+            background-color: #222;
+            color: #fff;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .get-started h2 {
+            margin-bottom: 1rem;
+            color: #ff6600;
+        }
+
+        .get-started p {
+            margin: 0;
+        }
+
+        .get-started button {
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+            margin-top: 20px;
+        }
+
+        .get-started button:hover {
+            background-color: #ff9966;
+        }
+
+        .blog-post{
+            margin-top: 10px;
+        }
+
+         .review,.blog-post {
+            background-color: #333;
+            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .review h3 {
+            color: #ff6600;
+            margin-top: 0;
+        }
+
+        .review,.blog-post p {
+            color: #fff;
+        }
+
+         footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        footer a {
+            color: #ff6600;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease-in-out;
+        }
+
+        footer a:hover {
+            color: #ff9966;
+        }
+
+        /* Rocket Animation */
+        
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">NoteWorks</a>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#docs">Docs</a></li>
+                <li><a href="#usage">Usage</a></li>
+                <li><a href="#ai">Explore AI Features</a></li>
+            </ul>
+        </nav>
+        <div class="auth-buttons">
+            <button>Login</button>
+            <button>Sign Up</button>
+        </div>
+    </header>
+
+
+    <div class="container">
+        <div class="section" id="get-started">
+            <div class="get-started">
+                <h2>Get Started Today</h2>
+                <p>Join thousands of users who have already improved their note-taking experience with our app. Start taking organized notes now!</p>
+                <button id="startButton">Get Started</button>
+            </div>
+        </div>
+
+        <div class="section" id="docs">
+            <h2>Docs</h2>
+            <p>Welcome to our note-taking app documentation section. Here, you'll find helpful guides and resources to get started with our app.</p>
+            <p>Our comprehensive documentation includes step-by-step instructions, tips and tricks, and real-world examples to help you become a note-taking pro.</p>
+            <p><a href="">Checkout our documetion</a></p>
+        </div>
+
+        <div class="section" id="usage">
+            <h2>Usage</h2>
+            <p>Learn how to efficiently take notes, organize your thoughts, and make the most of our user-friendly interface.</p>
+            <section class="blog-section">
+                <article class="blog-post">
+                    <h3>Getting Started with Note-Taking</h3>
+                    <p>Learn the fundamentals of effective note-taking. This guide covers essential techniques to help you organize your thoughts and information.</p>
+                    <a href="#">Read More</a>
+                </article>
+
+                <article class="blog-post">
+                    <h3>Maximizing Productivity with Tags and Labels</h3>
+                    <p>Tags and labels can revolutionize your note-taking. Discover how to use them to categorize, search, and retrieve your notes quickly and efficiently.</p>
+                    <a href="#">Read More</a>
+                </article>
+
+                <article class="blog-post">
+                    <h3>Collaboration Tips for Teams</h3>
+                    <p>Working on projects with a team? This guide explores collaborative note-taking, sharing, and editing to boost teamwork and productivity.</p>
+                    <a href="#">Read More</a>
+                </article>
+            </section>
+        </div>
+
+        <div class="section" id="ai">
+            <h2>Explore AI Features</h2>
+            <p>Discover our cutting-edge AI-powered features that can help you enhance your note-taking experience.</p>
+        </div>
+
+        <div class="section" id="reviews">
+            <h2>Customer Reviews</h2>
+            <div class="review">
+                <h3>John Doe</h3>
+                <p>"This app has completely changed the way I take notes. It's intuitive, efficient, and helps me stay organized."</p>
+            </div>
+            <div class="review">
+                <h3>Jane Smith</h3>
+                <p>"The AI features are impressive! They make my note-taking experience even more productive and insightful."</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Connect with us on social media:</p>
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">Twitter</a>
+        <a href="#" target="_blank">Instagram</a>
+        <a href="#" target="_blank">LinkedIn</a>
+        <p>© 2023 NoteWorks</p>
+    </footer>
+
+    <script>
+       
+    
+    </script>
+</body>
+</html>
