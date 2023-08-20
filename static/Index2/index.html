@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">NoteWorks</a>
+      <nav class="navbar">
+        <i class="ri-menu-3-line" aria-haspopup="menu"></i>
+        <div class="dropdown-content" role="menu">
+        <a href="#" class="active">Home</a>
+        <a href="#">About</a>
+        <a href="#">Work</a>
+        <a href="#">Contact</a>
+        <button class="btnLogin-popup">Login</button>
+        </div>
+      </nav>
+      <i class="ri-menu-3-line"></i>
+      </div>
+    </header>
+    <section class="section">
+      <p class="text-overlay">Need an <span>A.I.</span>  to help you take
+        <br> notes,
+       why not here?</p>
+       <br>
+       <button class="CTA">GET STARTED!<i class='bx bxs-rocket'></i></button>
+       <div class="right">
+        <img src="images/Hero.svg" alt="Hero">
+       </div>
+      <div class="wrapper">
+        <span class="icon-close">
+          <i class="bx bx-x"></i>
+        </span>
+        <div class="logreg-box">
+          <div class="form-box login">
+            <div class="logreg-title">
+              <h2>Login</h2>
+              <p>Please login to use the platform</p>
+            </div>
+            <!-- login form-->
+            <form action="#">
+              <div class="input-box">
+                <span class="icon"
+                  ><i class="bx bx-envelope bx-flip-horizontal"></i
+                ></span>
+                <input type="email" required />
+                <label>Email</label>
+              </div>
+              <div class="input-box">
+                <span class="icon"><i class="bx bxs-lock"></i></span>
+                <input type="password" required />
+                <label>Password</label>
+              </div>
+              <div class="remember-forgot">
+                <label>
+                  <input type="checkbox"/>
+                  Remember me
+                </label>
+                <a href="#">Forgot Password?</a>
+              </div>
+              <button type="submit" class="btn">Login</button>
+              <div class="logreg-link">
+                <p>
+                  Don't have an account?
+                  <a href="#" class="register-link">Register</a>
+                </p>
+              </div>
+            </form>
+          </div>
+          <!-- register form -->
+          <div class="form-box register">
+            <div class="logreg-title">
+              <h2>Registration</h2>
+              <p>Please follow the following to verify the identity</p>
+            </div>
+
+            <form action="#">
+              <div class="input-box">
+                <span class="icon">
+                  <i class="bx bxs-user"></i>
+                </span>
+                <input type="text" required />
+                <label>Full Name</label>
+              </div>
+              <div class="input-box">
+                <span class="icon"
+                  ><i class="bx bx-envelope bx-flip-horizontal"></i
+                ></span>
+                <input type="email" required />
+                <label>Email</label>
+              </div>
+              <div class="input-box">
+                <span class="icon"><i class="bx bxs-lock"></i></span>
+                <input type="password" required />
+                <label>Password</label>
+              </div>
+              <div class="remember-forgot">
+                <label>
+                  <input type="checkbox" />
+                  I agree to the terms & conditions
+                </label>
+              </div>
+              <button type="submit" class="btn">Register</button>
+              <div class="logreg-link">
+                <p>
+                  Already have an account?
+                  <a href="#" class="login-link">Login</a>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="media-options">
+          <a href="#">
+            <i class="bx bxl-google"></i>
+            <span>Login with Google</span>
+          </a>
+          <a href="#">
+            <i class="bx bxl-facebook-square"></i>
+            <span>Login with Facebook</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <div class="section2">
+    <div class="" id="docs">
+      <h2>Docs</h2>
+            <p>Welcome to our note-taking app documentation section. Here, you'll find helpful guides and resources to get started with our app.</p>
+            <p>Our comprehensive documentation includes step-by-step instructions, tips and tricks, and real-world examples to help you become a note-taking pro.</p>
+            <p><a href="">Checkout our documetion</a></p>
+    </div>
+    <div class="section3" id="usage">
+      <h2>Usage</h2>
+      <p>Learn how to efficiently take notes, organize your thoughts, and make the most of our user-friendly interface.</p>
+      <section class="blog-section">
+          <article class="blog-post">
+              <h3>Getting Started with Note-Taking</h3>
+              <p>Learn the fundamentals of effective note-taking. This guide covers essential techniques to help you organize your thoughts and information.</p>
+              <a href="#">Read More</a>
+          </article>
+      </div>
+    <script src="app.js"></script>
+  </body>
+</html>
