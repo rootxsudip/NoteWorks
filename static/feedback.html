@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <style>
+        /* ... (styles for the Feedback Form) ... */
+        
+        .star-rating {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 24px;
+            color: #f39c12;
+        }
+
+        .star-rating input[type="radio"] {
+            display: none;
+        }
+
+        .star-rating label {
+            cursor: pointer;
+        }
+
+        .star-rating label::before {
+            content: "\2605";
+        }
+
+        .star-rating input[type="radio"]:checked ~ label::before {
+            content: "\2605";
+            color: #f39c12;
+        }
+    </style>
+</head>
+<body>
+    <div class="feedback-container">
+        <h2>Share Your Feedback</h2>
+        <form action="#" method="post">
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5"></label>
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4"></label>
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3"></label>
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2"></label>
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1"></label>
+            </div>
+            <div class="submit-button">
+                <input type="submit" value="Submit Feedback">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
