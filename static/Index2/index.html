@@ -23,6 +23,8 @@
       rel="stylesheet"
     />
 
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
   </head>
   <body>
     <header class="header">
@@ -30,11 +32,13 @@
       <nav class="navbar">
         <i class="ri-menu-3-line" aria-haspopup="menu"></i>
         <div class="dropdown-content" role="menu">
-        <a href="#" class="active">Home</a>
-        <a href="#">About</a>
-        <a href="#">Work</a>
-        <a href="#">Contact</a>
-        <button class="btnLogin-popup">Login</button>
+          <ul class="menu-hover">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Work</a>
+            <a href="#">Contact</a>
+            <button class="btnLogin-popup">Login</button>
+          </ul>
         </div>
       </nav>
       <i class="ri-menu-3-line"></i>
@@ -129,11 +133,13 @@
                 <input type="email" required />
                 <label>Email</label>
               </div>
+              
               <div class="input-box">
                 <span class="icon"><i class="bx bxs-lock"></i></span>
                 <input type="password" required />
                 <label>Password</label>
               </div>
+
               <div class="remember-forgot">
                 <label>
                   <input type="checkbox"/>
@@ -141,6 +147,10 @@
                 </label>
                 <a href="#">Forgot Password?</a>
               </div>
+
+              <div class="g-recaptcha" data-sitekey="6LeLVMMnAAAAAIIoOE3fnSk1GNLsiaIbNqvZ9wV3"></div>
+              <br/>
+
               <button type="submit" class="btn">Login</button>
               <div class="logreg-link">
                 <p>
@@ -166,6 +176,7 @@
                 <input type="text" required />
                 <label>Full Name</label>
               </div>
+
               <div class="input-box">
                 <span class="icon"
                   ><i class="bx bx-envelope bx-flip-horizontal"></i
@@ -173,17 +184,23 @@
                 <input type="email" required />
                 <label>Email</label>
               </div>
+
               <div class="input-box">
                 <span class="icon"><i class="bx bxs-lock"></i></span>
                 <input type="password" required />
                 <label>Password</label>
               </div>
+
               <div class="remember-forgot">
                 <label>
                   <input type="checkbox" />
                   I agree to the terms & conditions
                 </label>
               </div>
+
+              <div class="g-recaptcha" data-sitekey="6LeLVMMnAAAAAIIoOE3fnSk1GNLsiaIbNqvZ9wV3"></div>
+              <br/>
+
               <button type="submit" class="btn">Register</button>
               <div class="logreg-link">
                 <p>

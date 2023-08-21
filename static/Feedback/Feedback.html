@@ -5,12 +5,13 @@
     <link rel="stylesheet" type="text/css" href="Feedback.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://kit.font-awesome.com/67c66657c7.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
     <section></section>
     <div class="container">
-        <form>
+        <form action="">
             <h1>Give Your Feedback</h1>
             <div class="id">
                 <input type="text" placeholder="Full name">
@@ -36,6 +37,11 @@
                 <input type="radio" id="star5" name="rate" value="5" />
                 <label for="star5" title="text">5 stars</label>
             </div>
+
+            <!-- Captcha Validation -->
+            <div class="g-recaptcha" data-sitekey="6LeLVMMnAAAAAIIoOE3fnSk1GNLsiaIbNqvZ9wV3"></div>
+            <br/>
+
             <button>Send</button>
         </form>
     </div>

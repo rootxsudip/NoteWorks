@@ -130,7 +130,7 @@ div .rate {
 
 /* Button */
 .container button{
-    width: 100%;
+    width: 50%;
     height: 45px;
     background: #fff;
     border: none;
@@ -141,6 +141,7 @@ div .rate {
     font-size: 16px;
     color: #333;
     font-weight: 600;
+    margin-top: 68px;
 }
 
 form input:focus,
@@ -160,4 +161,8 @@ form textarea:focus::placeholder{
 form input:focus + i{
     color: #00fff0;
     transition: all 0.3s ease;
+}
+
+.g-recaptcha{
+    /* margin: auto; */
 }
