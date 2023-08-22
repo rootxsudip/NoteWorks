@@ -7,7 +7,6 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -194,10 +193,6 @@
                 </label>
                 <a href="#">Forgot Password?</a>
               </div>
-
-              <div class="g-recaptcha" data-sitekey="6LeLVMMnAAAAAIIoOE3fnSk1GNLsiaIbNqvZ9wV3"></div>
-              <br/>
-
               <button type="submit" class="btn">Login</button>
               <div class="logreg-link">
                 <p>
@@ -237,14 +232,104 @@
               </div>
               <div class="remember-forgot">
                 <label>
-                  <input type="checkbox" />
+                  <input type="checkbox" id="agreeCheckbox"/> <!--onClick Function Here-->
                   I agree to the terms & conditions
                 </label>
+                <!--Add Terms & Conditions-->
+                <div class="terms-box hidden" id="termsBox">
+                  <div class="terms-text">
+                      <h2>Terms Of Services</h2>
+                      <p>Last Edit: 12/02/2023</p>
+                      <p>Greetings Users,</p>
+                      <p>Lorem ipsum dolor, sit amet consectetur
+                           adipisicing elit. Reprehenderit explicabo
+                            esse quisquam labore magnam eveniet
+                             saepe officia facilis. Libero, nihil
+                              nam! Repudiandae sit reprehenderit 
+                              cupiditate ducimus? Itaque, cupiditate 
+                              in. Possimus blanditiis quo ducimus 
+                              voluptatem. Libero blanditiis
+                               praesentium hic laboriosam dignissimos
+                                assumenda recusandae voluptatibus 
+                                vitae magnam, nihil enim quam rerum 
+                                modi!
+                      </p>
+                      <p>Lorem ipsum dolor, sit amet consectetur
+                           adipisicing elit. Reprehenderit explicabo
+                            esse quisquam labore magnam eveniet
+                             saepe officia facilis. Libero, nihil
+                              nam! Repudiandae sit reprehenderit 
+                              cupiditate ducimus? Itaque, cupiditate 
+                              in. Possimus blanditiis quo ducimus 
+                              voluptatem. Libero blanditiis
+                               praesentium hic laboriosam dignissimos
+                                assumenda recusandae voluptatibus 
+                                vitae magnam, nihil enim quam rerum 
+                                modi!
+                      </p>
+                      <p>Lorem ipsum dolor, sit amet consectetur
+                           adipisicing elit. Reprehenderit explicabo
+                            esse quisquam labore magnam eveniet
+                             saepe officia facilis. Libero, nihil
+                              nam! Repudiandae sit reprehenderit 
+                              cupiditate ducimus? Itaque, cupiditate 
+                              in. Possimus blanditiis quo ducimus 
+                              voluptatem. Libero blanditiis
+                               praesentium hic laboriosam dignissimos
+                                assumenda recusandae voluptatibus 
+                                vitae magnam, nihil enim quam rerum 
+                                modi!
+                      </p>
+                      <p>Lorem ipsum dolor, sit amet consectetur
+                           adipisicing elit. Reprehenderit explicabo
+                            esse quisquam labore magnam eveniet
+                             saepe officia facilis. Libero, nihil
+                              nam! Repudiandae sit reprehenderit 
+                              cupiditate ducimus? Itaque, cupiditate 
+                              in. Possimus blanditiis quo ducimus 
+                              voluptatem. Libero blanditiis
+                               praesentium hic laboriosam dignissimos
+                                assumenda recusandae voluptatibus 
+                                vitae magnam, nihil enim quam rerum 
+                                modi!
+                      </p>
+                      <p>Lorem ipsum dolor, sit amet consectetur
+                           adipisicing elit. Reprehenderit explicabo
+                            esse quisquam labore magnam eveniet
+                             saepe officia facilis. Libero, nihil
+                              nam! Repudiandae sit reprehenderit 
+                              cupiditate ducimus? Itaque, cupiditate 
+                              in. Possimus blanditiis quo ducimus 
+                              voluptatem. Libero blanditiis
+                               praesentium hic laboriosam dignissimos
+                                assumenda recusandae voluptatibus 
+                                vitae magnam, nihil enim quam rerum 
+                                modi!
+                      </p>
+                      <p>Lorem ipsum dolor, sit amet consectetur
+                           adipisicing elit. Reprehenderit explicabo
+                            esse quisquam labore magnam eveniet
+                             saepe officia facilis. Libero, nihil
+                              nam! Repudiandae sit reprehenderit 
+                              cupiditate ducimus? Itaque, cupiditate 
+                              in. Possimus blanditiis quo ducimus 
+                              voluptatem. Libero blanditiis
+                               praesentium hic laboriosam dignissimos
+                                assumenda recusandae voluptatibus 
+                                vitae magnam, nihil enim quam rerum 
+                                modi!
+                      </p>
+                  </div>
+                  <div class="buttons">
+                      <button class="btn red-btn" id="acceptTerm">
+                          Accept
+                      </button>
+                      <button class="btn gray-btn" id="declineTerm">
+                          Decline
+                      </button>
+                  </div>
               </div>
-
-              <div class="g-recaptcha" data-sitekey="6LeLVMMnAAAAAIIoOE3fnSk1GNLsiaIbNqvZ9wV3"></div>
-              <br/>
-
+              </div>
               <button type="submit" class="btn">Register</button>
               <div class="logreg-link">
                 <p>
