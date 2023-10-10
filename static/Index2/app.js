@@ -3,6 +3,9 @@ const registerLink = document.querySelector(".register-link");
 const loginLink = document.querySelector(".login-link");
 const btnPopup = document.querySelector(".btnLogin-popup");
 const iconClose = document.querySelector(".icon-close");
+const iconOpen = document.querySelector(".drop-btn");
+const dropdown = document.querySelector(".dropdown-content");
+const close_btn = document.querySelector(".close-btn");
 
 registerLink.onclick = () => {
   wrapper.classList.add("active");
@@ -19,6 +22,14 @@ btnPopup.onclick = () => {
 iconClose.onclick = () => {
   wrapper.classList.remove("active-popup");
 };
+
+iconOpen.addEventListener("click" , function(){
+  dropdown.style.opacity = 1;
+});
+
+close_btn.addEventListener("click", function(){
+  dropdown.style.opacity = 0;
+})
 
 document.addEventListener("DOMContentLoaded", function () {
   const agreeCheckbox = document.getElementById("agreeCheckbox");
