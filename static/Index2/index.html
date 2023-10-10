@@ -30,14 +30,19 @@
     <header class="header">
       <a href="#" class="logo">NoteWorks</a>
       <nav class="navbar">
-        <i class="ri-menu-3-line" aria-haspopup="menu"></i>
+        <div class="dropdown">
+        <i class="ri-menu-3-line drop-btn" aria-haspopup="menu"></i>
+        <div class="dropdown-content">
+        <i class="bx bx-x close-btn"></i>
         <a href="#">Home</a>
         <a href="#">About</a>
         <a href="#">Work</a>
         <a href="#">Contact</a>
         <button class="btnLogin-popup">Login</button>
+        <i class="bx bx-x icon-off"></i>
+        </div>
+        </div>
       </nav>
-      <i class="ri-menu-3-line"></i>
       </div>
     </header>
 
@@ -356,14 +361,9 @@
             <i class="bx bxl-google"></i>
             <span>Login with Google</span>
           </a>
-          <a href="#">
-            <i class="bx bxl-facebook-square"></i>
-            <span>Login with Facebook</span>
-          </a>
         </div>
       </div>
     </div>
-
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
   </body>
 </html>
