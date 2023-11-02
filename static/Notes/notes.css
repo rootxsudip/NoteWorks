@@ -63,7 +63,7 @@ width: 100%;
     cursor: pointer;
 }
 .info{
-  opacity: 0;
+  display: none;
   position: absolute;
   background-color: #f1f1f1;
   min-width: 120px;
@@ -72,8 +72,6 @@ width: 100%;
   flex-direction: column;
   padding: 30px;
   border-radius: 10px;
-  transition: translateY 3ms ease-in;
-  transform: translateY(0.1rem);
 }
 .info button{
   padding: 10px;
@@ -137,6 +135,12 @@ width: 100%;
   .isHidden2 {
     transition: all 400ms ease-in;
   }
+  .crossNote{
+    position: absolute;
+    left: 160px;
+    font-size: 18px;
+    cursor: crosshair;
+  }
   .nav ul{
     display: flex;
     align-items: center;
@@ -148,21 +152,6 @@ width: 100%;
   }
   .nav ul li{
     font-size: 25px;
-    cursor: pointer;
-  }
-  .arrow-out{
-    font-size: 50px;
-    position: absolute;
-    top: 45%;
-    left: 206px;
-    opacity: 0;
-    cursor: pointer;
-  }
-  .arrow-in{
-    font-size: 50px;
-    position: absolute;
-    top: 40%;
-    left: 160.4px;
     cursor: pointer;
   }
   /* Sidebar links */
@@ -185,7 +174,7 @@ width: 100%;
     color: white;
   }
   /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-div.content {
+div.container {
     margin-left: 200px;
     padding: 1px 16px;
     height: 700px;
@@ -198,6 +187,163 @@ textarea{
   width: 100%;
   height: 86vh;
   font-size: 25px;
+  caret-color: #dc5024;
+}
+.inactive{
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+.note { 
+  width: 380px; 
+  height: 260px; 
+  background-color: white; 
+  margin: 15px; 
+  margin-top: 55px; 
+  border-radius: 10px; 
+  margin-left: 20px; 
+  margin-bottom: 30px; 
+} 
+.popup{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 200px;
+  left: 600px;
+  background-color: #555;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 5px 8px 16px 0px #BDA69F;
+  max-width: 400px;
+}
+form{
+  padding: 20px;
+  min-height: 10vh;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form label{
+  font-size: 35px;
+  color: #D6F4FF;
+
+  margin-right: 20px;
+  text-align: center;
+}
+form input{
+  font-size: 2.7vw;
+  max-width: 200px;
+  height: 50px;
+  caret-color: #dc5024;
+}
+.close-btn2{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25px;
+  height: 25px;
+  background: #e0cccc;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom-left-radius: 10px;
+  color: #dc5024;
+  font-size: 25px;
+}
+.addTitle{
+  margin-top: 20px;
+}
+.addTitle,
+.addTitle:after {
+  width: 40px;
+  min-height: 40px;
+  line-height: 78px;
+  font-size: 20px;
+  background: linear-gradient(45deg, transparent 5%, #dc5024 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  box-shadow: 6px 0px 0px #f6d365;
+  outline: transparent;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.addTitle:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  
+  content: 'NOTEWORKS';
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #D6F4FF 5%);
+  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  clip-path: var(--slice-0);
+}
+
+.addTitle:hover:after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
 }
   /* On screens that are less than 700px wide, make the sidebar into a topbar */
   @media screen and (max-width: 700px) {
@@ -215,5 +361,13 @@ textarea{
     .sidebar a {
       text-align: center;
       float: none;
+    }
+  }
+  @media (min-width: 768px) {
+    .addTitle,
+    .addTitle:after {
+      width: 200px;
+      height: 86px;
+      line-height: 88px;
     }
   }
