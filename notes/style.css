@@ -1,0 +1,373 @@
+
+/*
+  Main colours:
+  #E54B1C
+  #7EB0E1
+  #D6F4FF
+  #5C7A98
+ */
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+html, body{
+height: 100%;
+width: 100%;
+}
+
+  .header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1vw 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    background: transparent;
+    border-bottom: 1px solid black;
+  }
+  
+  header .logo {
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      #D6F4FF 0deg,
+      #dc5024 360deg
+    );
+    text-decoration: none;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bolder;
+    pointer-events: none;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .navbar a {
+    position: relative;
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 40px;
+  }
+.profile{
+    width: 55px;
+    height: 55px;
+    background-image: linear-gradient(to bottom right, #f6d365 , #fda085);
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+.info{
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  flex-direction: column;
+  padding: 30px;
+  border-radius: 10px;
+}
+.info button{
+  padding: 10px;
+  border-radius: 5px;
+  background-image: linear-gradient(to bottom right, #fda085 , #dc4f24d5);
+  font-weight: 600;
+  cursor: pointer;
+}
+.settings{
+  margin-bottom: 25px;
+  margin-top: 10px;
+}
+.info button:hover{
+  box-shadow: 5px 8px 16px 0px #BDA69F;
+  background-image: linear-gradient(to bottom right, #f6d365 , #fda085);
+}
+.dropdown{
+  position: relative;
+  display: inline-block;
+}
+.profile::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to bottom right, #f6d365 , #fda085);
+  filter: blur(25px) brightness(1.5);
+  transform: scale(0.95);
+  z-index: -1;
+}
+.close-btn{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25px;
+  height: 25px;
+  background: #e0cccc;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom-left-radius: 10px;
+  color: #dc5024;
+  font-size: 25px;
+}
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    opacity: 1;
+/*    transform: translateX(1rem);
+    transition: transform 3ms linear ease-in;*/
+  }
+  .isHidden {
+		transition: all 400ms ease-out;
+    opacity: 1;
+	}
+  .isHidden2 {
+    transition: all 400ms ease-in;
+  }
+  .crossNote{
+    position: absolute;
+    left: 160px;
+    font-size: 18px;
+    cursor: crosshair;
+  }
+  .nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    list-style-type: none;
+    padding: 5%;
+    gap: 40px;
+    background-color: #f1f1f1;
+  }
+  .nav ul li{
+    font-size: 25px;
+    cursor: pointer;
+  }
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  /* Active/current link */
+  .sidebar a.active {
+    background-color: #dc5024;
+    color: white;
+  }
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.container {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 700px;
+  }
+textarea{
+  box-sizing: border-box;
+  border-right: 2px none;
+  border-top: none;
+  border-bottom: none;
+  width: 100%;
+  height: 86vh;
+  font-size: 25px;
+  caret-color: #dc5024;
+}
+.inactive{
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+}
+.note { 
+  width: 380px; 
+  height: 260px; 
+  background-color: white; 
+  margin: 15px; 
+  margin-top: 55px; 
+  border-radius: 10px; 
+  margin-left: 20px; 
+  margin-bottom: 30px; 
+} 
+.popup{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 200px;
+  left: 600px;
+  background-color: #555;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 5px 8px 16px 0px #BDA69F;
+  max-width: 400px;
+}
+form{
+  padding: 20px;
+  min-height: 10vh;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form label{
+  font-size: 35px;
+  color: #D6F4FF;
+
+  margin-right: 20px;
+  text-align: center;
+}
+form input{
+  font-size: 2.7vw;
+  max-width: 200px;
+  height: 50px;
+  caret-color: #dc5024;
+}
+.close-btn2{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25px;
+  height: 25px;
+  background: #e0cccc;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom-left-radius: 10px;
+  color: #dc5024;
+  font-size: 25px;
+}
+.addTitle{
+  margin-top: 20px;
+}
+.addTitle,
+.addTitle:after {
+  width: 40px;
+  min-height: 40px;
+  line-height: 78px;
+  font-size: 20px;
+  background: linear-gradient(45deg, transparent 5%, #dc5024 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  box-shadow: 6px 0px 0px #f6d365;
+  outline: transparent;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.addTitle:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  
+  content: 'NOTEWORKS';
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #D6F4FF 5%);
+  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  clip-path: var(--slice-0);
+}
+
+.addTitle:hover:after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+  /* On screens that are less than 700px wide, make the sidebar into a topbar */
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+  @media (min-width: 768px) {
+    .addTitle,
+    .addTitle:after {
+      width: 200px;
+      height: 86px;
+      line-height: 88px;
+    }
+  }
