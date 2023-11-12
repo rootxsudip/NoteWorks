@@ -42,6 +42,11 @@
     <header class="header">
       <!--dropbtn = profile, dropdown-content = info-->
         <a href="#" class="logo">NoteWorks</a>
+              <form action="#" class="search-bar">
+              <input type="text" placeholder="Search Anything" name="search" class="search_input">
+              <button type="button" class="open_search"><i class="ri-search-2-line"></i></button>
+              <button type="submit" class=" submit_search"><i class="ri-search-2-line"></i></button>
+            </form>
         <nav class="navbar">
           <div class="dropdown">
           <div class="profile">
