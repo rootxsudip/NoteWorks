@@ -13,57 +13,60 @@ const closePopup = document.querySelector(".close-btn2");
 let titleInput = document.querySelector("#title");
 let del = document.createElement("i");
 let textzone = document.createElement("textarea");
-let deleteNotes = document.querySelectorAll(".crossNote");
+const search_bar = document.querySelector(".search-bar");
+const submit_search = document.querySelector(".submit_search");
+const open_search = document.querySelector(".open_search");
+const search_input = document.querySelector(".search_input");
 
-dropbtn.addEventListener("click", function(){
-    dropdown.style.display = "flex";
-})
-
-closeBtn.addEventListener("click", function(){
+search_bar.addEventListener("click", function () {
+  search_bar.classList.add("activeSearchBar");
+  open_search.style.display = "none";
+  submit_search.style.display = "block";
+  open_search.style.display = "none";
+  search_input.style.display = "block";
+});
+document.addEventListener("click", (e) => {
+  if (e.target.className === "container" || e.target.className === "header") {
+    search_bar.classList.remove("activeSearchBar");
     dropdown.style.display = "none";
-})
+    search_bar.style.opacity = 0.9;
+    submit_search.style.display = "none";
+    open_search.style.display = "block";
+    search_input.style.display = "none";
+  }
+});
 
-addNote.addEventListener("click", function(){
-    popup.style.display = "block";
-})
+dropbtn.addEventListener("click", function () {
+  dropdown.style.display = "flex";
+});
 
-addTitle.addEventListener("click", (e)=>{
-    e.preventDefault();
-    if(titleInput.value!==""){
+closeBtn.addEventListener("click", function () {
+  dropdown.style.display = "none";
+});
+
+addNote.addEventListener("click", function () {
+  popup.style.display = "block";
+});
+
+addTitle.addEventListener("click", () => {
+  if (titleInput.value !== "") {
     popup.style.display = "none";
     textzone.setAttribute("contenteditable", "true");
     textzone.className = "textzone";
     container.appendChild(textzone);
-    let a = document.createElement('a');
+    let a = document.createElement("a");
     let link = document.createTextNode(`${titleInput.value}`);
     a.appendChild(link);
-    a.href = `#${titleInput.value}`;
+    a.href = `notes.html#${titleInput.value}`;
     del.className = "ri-close-circle-line crossNote";
     notes.appendChild(a).appendChild(del);
-    textarea.value = ""
-//    if(del.addEventListener("click", removeNote)){
-//    function removeNote(e){
-//            e.target.parentElement.remove();
-//            updateStorage();
-//            }
-//        }
+    if (del.addEventListener("click", removeNote)) {
+      function removeNote(e) {
+        e.target.parentElement.remove();
+        updateStorage();
+      }
     }
-console.log(titleInput.value)
-let noteHeading = titleInput.value
-let email = localStorage.getItem('email');
-var params = "heading=" + encodeURIComponent(noteHeading) + "&content=" + encodeURIComponent("") + "&email=" + encodeURIComponent(email);
- var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                var noteContent = xhr.responseText;
-                window.location.href = "/noteworks/notes";
-//                showNoteContent(noteId, noteContent);
-              }
-            };
-            xhr.open("POST", "AddNote", true);
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhr.send(params);
-//window.location.href = "/noteworks/notes";    
+  }
 });
 
 function updateStorage() {
@@ -71,81 +74,14 @@ function updateStorage() {
 }
 
 closePopup.addEventListener("click", () => {
-    popup.style.display = "none";
-})
+  popup.style.display = "none";
+});
 
 notes.addEventListener("click", myFunction);
 function myFunction(e) {
-		var elems = document.querySelector(".active");
-    if(elems !=null) {
-      elems.classList.remove("active");
-    }
-    e.target.className = "active";
-	}
- 
-function showNoteContent(noteId, content) {
-            var textarea = document.getElementById("text");
-            textarea.value = content;
-            textarea.readOnly = false;
-            textarea.dataset.noteId = noteId;
- }
-
-// Function to fetch note content by note ID using AJAX
-    function fetchNoteContent(noteId) {
-        
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                var noteContent = xhr.responseText;
-                showNoteContent(noteId, noteContent);
-              }
-            };
-            xhr.open("POST", "FetchNote", true);
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhr.send("id=" + noteId);
-        }
-    
-save.addEventListener("click",()=>{
-//    console.log("Save")
-    noteId = noteId
-    content = textarea.value
-    heading = window.location.hash.substring(1)
-    email = localStorage.getItem('email');
-    params = "noteId=" + encodeURIComponent(noteId) + "&heading=" + encodeURIComponent(heading) + "&content=" + encodeURIComponent(content) + "&email=" + encodeURIComponent(email);
- var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                noteContent = xhr.responseText;
-//                window.location.href = "/noteworks/notes";
-//                showNoteContent(noteId, noteContent);
-              }
-            };
-            xhr.open("POST", "UpdateNote", true);
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhr.send(params);
-    
-})
-
-//Delete Note
-for(let i=0;i<deleteNotes.length;i++){
-    deleteNotes[i].addEventListener("click",()=>{
-             noteId = noteId
-    email = localStorage.getItem('email');
-    params = "noteId=" + encodeURIComponent(noteId) + "&email=" + encodeURIComponent(email);
- var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                noteContent = xhr.responseText;
-                window.location.href = "/noteworks/notes";
-              }
-            };
-            xhr.open("POST", "DeleteNote", true);
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhr.send(params);
-    })
-}
-
-let noteId=0
-function addNoteID(id){
-    noteId=id
+  var elems = document.querySelector(".active");
+  if (elems != null) {
+    elems.classList.remove("active");
+  }
+  e.target.className = "active";
 }
