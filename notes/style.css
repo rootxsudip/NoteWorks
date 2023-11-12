@@ -249,16 +249,15 @@ textarea{
   margin-bottom: 30px; 
 } 
 .popup{
+  position: relative;
   display: none;
   align-items: center;
   justify-content: center;
   position: absolute;
   bottom: 200px;
   left: 600px;
-  background-color: #555;
   text-align: center;
   border-radius: 5px;
-  box-shadow: 5px 8px 16px 0px #BDA69F;
   max-width: 400px;
 }
 .addTitleForm{
@@ -268,8 +267,9 @@ textarea{
   align-items: center;
   justify-content: center;
   z-index: 99;
-  position: absolute;
+  position: relative;
   background-color: #1f1d1d;
+  left: 20vw;
   flex-wrap: wrap;
 }
 .addTitleForm label{
@@ -293,7 +293,8 @@ textarea{
   background: #e0cccc;
   cursor: pointer;
   display: flex;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: flex-end;
   align-items: center;
   border-bottom-left-radius: 10px;
   color: #dc5024;
@@ -301,6 +302,7 @@ textarea{
 }
 .addTitle{
   margin-top: 20px;
+  width: 20px;
 }
 .addTitle,
 .addTitle:after {
@@ -460,7 +462,7 @@ textarea{
   @media (min-width: 768px) {
     .addTitle,
     .addTitle:after {
-      width: 200px;
+      width: 100px;
       height: 86px;
       line-height: 88px;
     }
