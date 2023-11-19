@@ -1,0 +1,121 @@
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 500px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 30px;
+    background-color: rgba(0,0,0,0.08) 0px 4px 12px;
+
+}
+.title-para{
+    margin-bottom: 30px;
+}
+
+.title{
+    color: #000000;
+    font-size: 39px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.para{
+    color: #131416;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    padding: 10px;
+}
+.input-group{
+    position: relative;
+}
+.input-group .label-title{
+    color : #080808;
+    margin-bottom: 11px;
+    font-size : 20px;
+    display: block;
+    font-weight: 500;
+    
+}
+.input-group input{
+    width: 100%;
+    background-color: none;
+    color: #050607;
+    height: 50px;
+    font-size: 16px;
+    border: 1px solid #EAECF0;
+    padding: 9px 16px 9px 52px;
+    outline: none;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.input-group input::placeholder{
+    font-size: 17px ;
+    font-weight: 500;
+   
+}
+.input-group .iconn{
+   position: absolute;
+   color: #505f74;
+   left: 13px;
+   top: calc(50% - 9px);
+   text-align: center;
+   font-size: 21px;
+}
+.Continue{
+    width: 100%;
+    background-color: rgb(222, 109, 16);
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #fff;
+    padding: 13px 24px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+}
+.Continue:hover{
+    opacity: 0.95;
+}
+.back{
+    font-size: 20px;
+    color: #01295e;
+    text-align: center;
+    padding: 24px;
+}
+
+.title-para{
+    position: relative;
+}
+.close-button{
+    background: transparent;
+    border: 0px;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    right: 2px;
+    bottom: 110px
+}
+.close-button:hover{
+    opacity: 0.5;
+    background-color: rgb(195, 201, 204);
+
+}
+body{
+    background: url('https://t3.ftcdn.net/jpg/03/43/37/68/360_F_343376859_BKYJsV5pBj4iOGaaag2RK8k34cRXPJ2R.jpg') no-repeat;
+   background-attachment: fixed;
+   background-size: 100% 100% ;
+}
+ .emo{
+  margin-left: 120px;
+   height: 40%;
+  
+} 
