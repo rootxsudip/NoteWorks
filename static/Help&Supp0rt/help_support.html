@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="help_support.css">
+</head>
+<body>  
+    <div class="container">
+      
+        <div class="item">
+            <div class="contact">
+                <div class="first-text">Let's get in touch</div>
+                <img src="https://img.freepik.com/premium-vector/flat-customer-support-illustration_23-2148892450.jpg" alt="" class="image">
+            </div>
+            <div class="submit-form">
+               <button type="button" class="close-button" onclick="closeForm()">x</button>
+                <h4 class="third-text">Contact Us</h4>
+                <form action="">
+                    <div class="input-box">
+                        <input type="text" class="input" required>
+                        <label for="">Name</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" class="input" required>
+                        <label for="">Email</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="tel" placeholder="10-digits only!"  class="input" pattern="[0-9]{10}" required>
+                        <label for="">Phone</label>
+                    </div>
+                    <div class="input-box">
+                        <textarea name="" class="input" required id="message" cols="30" rows="10"></textarea>
+                        <label for="">Message</label>
+                    </div>
+                    <input type="submit"class="btn" value="Submit">
+                </form>
+            </div>
+    </div>
+    </div>    
+    <script>
+        function closeForm() {
+          // You can add additional logic here if needed
+          document.querySelector('.form-container').style.display = 'none';
+        }
+      </script>
+</body>
+</html>
