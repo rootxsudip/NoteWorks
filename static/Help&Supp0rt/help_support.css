@@ -10,7 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100dvh;
-    background: linear-gradient(180deg,rgb(247, 78, 0),rgb(226, 102, 0)) ;
+    background: linear-gradient(180deg,rgb(244, 93, 23),rgb(243, 124, 27)) ;
 }
 
 .container{
@@ -59,13 +59,10 @@ body{
 .third-text{
     font-size: 25px;
     position: relative;
-   
     left: 20px;
-   
     color: #fff;
+    padding-top: 15px;
     margin-left:110px;
-   
-   
 }
 form{
     padding: 0 50px;
