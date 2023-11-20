@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="form-section">
+            <form action="">
+                <h1>BILLING ADDRESS</h1>
+                <div class="input-box">
+                    <input type="text" id="name" maxlength="50" placeholder="Full Name">
+                </div>
+                <div class="input-box">
+                    <input type="text" id="email" placeholder="Email">
+                </div>
+                <div class="input-box">
+                    <input type="text" id="address" placeholder="Address">
+                </div>
+                <div class="input-box">
+                    <input type="text" id="city" placeholder="City">
+                </div>
+                <div class="input-box">
+                    <input type="number" id="zip" placeholder="Zip code">
+                </div>
+            </form>
+        </div>
+
+            <!-- Credit Card Information -->
+            <div class="credit-card-section">
+                <h1>CREDIT CARD INFORMATION</h1>
+                <div class="input-box">
+                    <input type="text" id="creditCardName" maxlength="50" placeholder="Cardholder Name">
+                </div>
+                <div class="input-box">
+                    <input type="text" id="card-num" maxlength="16" placeholder="Card Number">
+                </div>
+                <div class="input-box">
+                    <input type="text" id="expiration" maxlength="5" placeholder="Expiration Date (MM/YY)">
+                </div>
+                <div class="input-box">
+                    <input type="text" id="cvv" maxlength="3" placeholder="CVV">
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </div>
+     </div>
+     <script>
+
+        // Name Validation
+        const nameInput = document.getElementById('name');
+            const creditCardNameInput = document.getElementById('creditCardName');
+    
+            nameInput.addEventListener('input', function(event) {
+                const input = event.target.value.replace(/[^a-zA-Z\s\-']/g, ''); // Remove non-letter characters
+                event.target.value = input; // Set the sanitized input value
+            });
+    
+            creditCardNameInput.addEventListener('input', function(event) {
+                const input = event.target.value.replace(/[^a-zA-Z\s\-']/g, ''); // Remove non-letter characters
+                event.target.value = input; // Set the sanitized input value
+            });
+    
+        // Email Validatin
+        const emailInput = document.getElementById('email');
+            const addressInput = document.getElementById('address');
+            let previousEmail = '';
+    
+            emailInput.addEventListener('blur', function(event) {
+                const enteredEmail = event.target.value;
+                if (!isValidEmail(enteredEmail)) {
+                    previousEmail = enteredEmail;
+                    event.target.value = '';
+                }
+            });
+    
+            addressInput.addEventListener('focus', function() {
+                if (!isValidEmail(previousEmail)) {
+                    emailInput.value = previousEmail;
+                }
+            });
+    
+            function isValidEmail(email) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            }
+    
+    
+        // Card validation
+            const cardInput = document.getElementById('card-num');
+    
+            cardInput.addEventListener('input', function(event) {
+                const input = event.target.value;
+                const sanitizedInput = input.replace(/\D/g, ''); // Remove non-digit characters
+    
+                if (sanitizedInput.length > 16) {
+                    event.target.value = sanitizedInput.slice(0, 16); // Truncate to 3 characters
+                } else {
+                    event.target.value = sanitizedInput; // Set the sanitized input value
+                }
+            });
+    
+            const expirationInput = document.getElementById('expiration');
+    
+            expirationInput.addEventListener('input', function(event) {
+                const input = event.target.value;
+                const sanitizedInput = input.replace(/\D/g, ''); // Remove non-digit characters
+    
+                if (sanitizedInput.length > 4) {
+                    event.target.value = sanitizedInput.slice(0, 4); // Truncate to 4 characters
+                } else {
+                    event.target.value = sanitizedInput; // Set the sanitized input value
+                }
+    
+                if (sanitizedInput.length >= 2) {
+                    const formattedDate = sanitizedInput.slice(0, 2) + '/' + sanitizedInput.slice(2);
+                    event.target.value = formattedDate; // Set the formatted MM/YY value
+                }
+            });
+    
+            const cvvInput = document.getElementById('cvv');
+    
+            cvvInput.addEventListener('input', function(event) {
+                const input = event.target.value;
+                const sanitizedInput = input.replace(/\D/g, ''); // Remove non-digit characters
+    
+                if (sanitizedInput.length > 3) {
+                    event.target.value = sanitizedInput.slice(0, 3); // Truncate to 3 characters
+                } else {
+                    event.target.value = sanitizedInput; // Set the sanitized input value
+                }
+            });
+    
+        </script>
+   
+</body>
+</html>

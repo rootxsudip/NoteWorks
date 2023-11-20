@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background: rgb(46, 45, 45); */
+    background: url('images/paymentbackground.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+   
+
+}
+
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 1000px;
+   
+    /* background: purple; */
+background:transparent;
+    border: 2px solid rgba(41, 40, 40, 0.2);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.451);;
+    color: #fff;
+    border-radius: 30px;
+    padding: 30px 40px 5px ;
+}
+
+
+.wrapper h1{
+    font-size: 38px;
+    text-align: center;
+    color:black;
+}
+
+.wrapper .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    /* background-color: salmon; */
+    margin: 30px 0;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255,255,255, .2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: #0b0b0b;
+    padding: 20px 45px 20px 20px;
+    box-shadow: 0 0 10px rgba(0,0,0, .2);
+}
+
+.input-box input::placeholder {
+    color: #363535;
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.remember-forget{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+
+.remember-forget label input{
+    accent-color: #fff;
+    margin-right: 3px;
+}
+
+.remember-forget a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forget a:hover{
+    text-decoration: underline;
+}
+
+.wrapper .btn{
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0, .2);
+    cursor: pointer;
+    font-size: 16px;
+    color:whitesmoke;
+    font-weight: 600;
+
+    background-color:orangered;
+    transition: 0.4s;
+}
+.wrapper .btn:hover{
+    box-shadow: 0 0 10px  navy;
+}
+
+.form-section {
+            width: 48%; /* Adjust the width as needed */
+        }
+
+.credit-card-section {
+            width: 48%; /* Adjust the width as needed */
+            /* background-color: rgba(255, 255, 255, 0.1); Optional background color */
+            padding: 20px;
+            border-radius: 20px;
+        }
