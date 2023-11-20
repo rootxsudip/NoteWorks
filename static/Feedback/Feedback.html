@@ -1,47 +1,47 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Feedback Form</title>
-    <link rel="stylesheet" type="text/css" href="Feedback.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://kit.font-awesome.com/67c66657c7.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-</head>
-
-<body>
-    <section></section>
-    <div class="container">
-        <form action="">
-            <h1>Give Your Feedback</h1>
-            <div class="id">
-                <input type="text" placeholder="Full name">
-                <i class='bx bxs-user'></i>
-            </div>
-            <div class="id">
-                <input type="email" placeholder="Email address">
-                <i class='bx bxs-envelope' ></i>
-            </div>    
-
-                <textarea cols="15" rows="5" placeholder="Enter your opinions here."></textarea>
+    <head>
+        <title>Feedback Form</title>
+        <link rel="stylesheet" type="text/css" href="Feedback.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <!-- <script src="https://kit.font-awesome.com/67c66657c7.js"></script> -->
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    </head>
+    
+    <body>
+        <section></section>
+        
+        <div class="pic">
+            <img src="https://img.freepik.com/premium-vector/real-estate-agent-using-customer-feedback-improve-their-real-estate-services_701961-7627.jpg"> 
+        </div>
+        <div class="container">
+            <form action="">
+                <div class="text">Give Your Feedback</div>
+                <div class="id">
+                    <input type="text" name="text" placeholder="Full name">
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="id">
+                    <input type="email" name="email" placeholder="Email address">
+                    <i class='bx bxs-envelope' ></i>
+                </div>    
                 
-            <div class="rate">
-                <h4 class="rating">Rating: </h4>
-                <input type="radio" id="star1" name="rate" value="1" />
-                <label for="star1" title="text">1 star</label>
-                <input type="radio" id="star2" name="rate" value="2" />
-                <label for="star2" title="text">2 stars</label>
-                <input type="radio" id="star3" name="rate" value="3" />
-                <label for="star3" title="text">3 stars</label>
-                <label for="star4" title="text">4 stars</label>
-                <input type="radio" id="star4" name="rate" value="4" />
-                <input type="radio" id="star5" name="rate" value="5" />
-                <label for="star5" title="text">5 stars</label>
-            </div>
-
-            <!-- Captcha Validation -->
-            <div class="g-recaptcha" data-sitekey="6LeLVMMnAAAAAIIoOE3fnSk1GNLsiaIbNqvZ9wV3"></div>
-            <br/>
-
+                <textarea name="textarea" cols="15" rows="5" placeholder="Enter your opinions here."></textarea>
+                
+                <div class="container2">
+                    <div class="star-widget">
+                      <input type="radio" name="rate" id="rate-5">
+                      <label for="rate-5" class="fas fa-star"></label>
+                      <input type="radio" name="rate" id="rate-4">
+                      <label for="rate-4" class="fas fa-star"></label>
+                      <input type="radio" name="rate" id="rate-3">
+                      <label for="rate-3" class="fas fa-star"></label>
+                      <input type="radio" name="rate" id="rate-2">
+                      <label for="rate-2" class="fas fa-star"></label>
+                      <input type="radio" name="rate" id="rate-1">
+                      <label for="rate-1" class="fas fa-star"></label>
+                    </div>
+                    </div>
             <button>Send</button>
         </form>
     </div>
